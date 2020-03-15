@@ -13,9 +13,11 @@ class HomeTableViewController: UITableViewController {
     var tweetArray = [NSDictionary]()
     var numberOfTweet: Int!
     
+    @IBOutlet var tweetTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadTweet()
+        self.loadTweet()
         
     }
     
@@ -26,7 +28,7 @@ class HomeTableViewController: UITableViewController {
     
     func loadTweet(){
         let myURL = "https://api.twitter.com/1.1/statuses/home_timeline.json"
-        let myParam = ["count": 10]
+        let myParam = ["count": 40]
         TwitterAPICaller.client?.getDictionariesRequest(url: myURL, parameters: myParam, success: {(tweets: [NSDictionary]) in
             self.tweetArray.removeAll()
             for tweet in tweets {
@@ -56,12 +58,12 @@ class HomeTableViewController: UITableViewController {
         let data = try? Data(contentsOf: imageURL)
         
         if let imageData = data {cell.profileImageView.image = UIImage(data: imageData)}
+        
+        cell.setFavorite(tweetArray[indexPath.row]["favorited"] as! Bool)
+        cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
+        cell.setRetweeted(tweetArray[indexPath.row]["retweeted"] as! Bool)
         return cell
     }
-    
-    // MARK: - Table view data source
-    
-    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -70,7 +72,7 @@ class HomeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return tweetArray.count
-    }
+          return tweetArray.count
+   }
 
 }
