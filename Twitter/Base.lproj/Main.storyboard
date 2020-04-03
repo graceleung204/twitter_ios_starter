@@ -170,8 +170,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QSH-sn-Fav">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QSH-sn-Fav">
                                 <rect key="frame" x="0.0" y="56" width="414" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="8Yd-Fk-AX9"/>
+                                    <constraint firstAttribute="width" constant="414" id="DJn-Jd-dcB"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" smartInsertDeleteType="no"/>
@@ -179,9 +183,9 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="QSH-sn-Fav" firstAttribute="trailing" secondItem="xXf-9b-vhU" secondAttribute="trailing" id="tak-OT-ckf"/>
-                            <constraint firstItem="QSH-sn-Fav" firstAttribute="top" secondItem="xXf-9b-vhU" secondAttribute="top" id="uPP-ka-zJU"/>
-                            <constraint firstItem="QSH-sn-Fav" firstAttribute="leading" secondItem="xXf-9b-vhU" secondAttribute="leading" id="wE4-6X-qF3"/>
+                            <constraint firstItem="QSH-sn-Fav" firstAttribute="leading" secondItem="xXf-9b-vhU" secondAttribute="leading" id="BPC-Sj-rYV"/>
+                            <constraint firstItem="QSH-sn-Fav" firstAttribute="top" secondItem="xXf-9b-vhU" secondAttribute="top" id="oHs-ck-Amj"/>
+                            <constraint firstItem="QSH-sn-Fav" firstAttribute="trailing" secondItem="xXf-9b-vhU" secondAttribute="trailing" id="wPx-SW-BV6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xXf-9b-vhU"/>
                     </view>
